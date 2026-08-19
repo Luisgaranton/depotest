@@ -161,7 +161,7 @@ Análisis de la consulta de movimientos de la billetera y un bug report completo
 
 ---
 
-## GitHub Actions
+## GitHub Actions(Extra)
 
 Cada push o pull request corre `npm test` en Ubuntu + Chrome. El archivo está en `.github/workflows/cypress.yml`.
 
