@@ -1,0 +1,17 @@
+{
+  "name": "qa-challenge-dcac",
+  "version": "1.0.0",
+  "description": "Challenge técnico QA DCAC: automatización API y E2E con Cypress",
+  "private": true,
+  "scripts": {
+    "cy:open": "cypress open --e2e --browser chrome",
+    "test": "cypress run",
+    "test:api": "cypress run --spec cypress/e2e/api/**/*.cy.js",
+    "test:ui": "cypress run --spec cypress/e2e/ui/**/*.cy.js",
+    "test:headed": "cypress run --headed --browser chrome",
+    "report:open": "explorer docs\\reporte-defectos.pdf"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.4"
+  }
+}

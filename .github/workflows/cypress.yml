@@ -1,0 +1,39 @@
+name: Cypress
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: cypress-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: API + E2E
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          command: npm test
+        env:
+          CYPRESS_FAKESTORE_USERNAME: ${{ secrets.FAKESTORE_USERNAME || 'mor_2314' }}
+          CYPRESS_FAKESTORE_PASSWORD: ${{ secrets.FAKESTORE_PASSWORD || '83r5^_' }}
+          CYPRESS_SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME || 'standard_user' }}
+          CYPRESS_SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD || 'secret_sauce' }}
+
+      - name: Screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
