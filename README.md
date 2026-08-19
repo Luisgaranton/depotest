@@ -30,7 +30,7 @@ npm -v
 Si lo clonás desde GitHub:
 
 ```powershell
-git clone https://github.com/TU-USUARIO/depotest.git
+git clone https://github.com/Luisgaranton/depotest.git
 cd depotest
 ```
 
