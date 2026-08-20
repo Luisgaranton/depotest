@@ -1,6 +1,6 @@
-# Challenge técnico QA — DCAC
+# Challenge técnico QA — Depocampo
 
-Este repo es la entrega del challenge de Analista QA. Hay tres partes:
+Este repo es la entrega del challenge de QA Automation. Hay tres partes:
 
 1. Tests de API con Cypress contra [Fake Store](https://fakestoreapi.com/)
 2. Un flujo E2E de compra en [Sauce Demo](https://www.saucedemo.com/)
