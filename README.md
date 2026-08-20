@@ -1,4 +1,4 @@
-# Challenge técnico QA — Depocampo
+# Challenge técnico QA — Decampo
 
 Este repo es la entrega del challenge de QA Automation. Hay tres partes:
 
